@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem('saved-contacts', JSON.stringify(contacts));
   }, [contacts]);
-  const debouncedSearch = useDebounce(search || '', 500);
+  const [debouncedSearch] = useDebounce(search, 500);
 
   const visibleContacts = useMemo(() => {
     if (!debouncedSearch || typeof debouncedSearch !== 'string')
@@ -34,6 +34,9 @@ function App() {
       contact.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
     );
   }, [contacts, debouncedSearch]);
+  // const visibleContacts = contacts.filter((contact) =>
+  //   contact.name.toLowerCase().includes(search.toLowerCase()),
+  // );
 
   const addContact = (newContact) => {
     setContacts((prevContacts) => {
