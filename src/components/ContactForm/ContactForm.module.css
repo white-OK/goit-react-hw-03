@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: rgb(221, 210, 210) solid 1px;
+    border-radius: 10px;
+    width: 350px;
+    margin-bottom: 20px;
+}
+.btnSubmit {
+    width: 110px;
+    margin: 0 auto;
+}
+.btnSubmit:hover {
+    background-color: rgb(47, 0, 255);
+}
